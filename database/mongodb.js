@@ -1,6 +1,6 @@
 const { default: mongoose } = require("mongoose");
-const url =
-  "mongodb+srv://vizztechnology:aKTTa1GyQEdyfiIA@cluster0.fd7gvvp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const url = process.env.MONGO_URL
+
 const connectToMongo = async () => {
   //   console.log(process.env.MONGO_URL);
   await mongoose
