@@ -27,3 +27,9 @@ exports.update_component = async (req, res) => {
     await Component.updateOne({ _id: bodyPayload._id }, payload)
     res.status(200).json({msg:'updated'})
 }
+
+exports.delete_component = async (req, res) => {
+    let id = req.params.id
+     await Component.deleteOne({ _id: id })
+    res.status(200).json({msg:'deleted successfully'})
+}
