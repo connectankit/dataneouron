@@ -12,7 +12,6 @@ exports.create_component = async (req, res) => {
         component_name:bodyPayload.component_name,
           height: bodyPayload.height,
           width:bodyPayload.width,
-          position: bodyPayload.position,
     }
     let response = await Component.create(payload);
     res.status(201).json(response)
@@ -24,7 +23,6 @@ exports.update_component = async (req, res) => {
         component_name:bodyPayload.component_name,
           height: bodyPayload.height,
           width:bodyPayload.width,
-          position: bodyPayload.position,
     }
     await Component.updateOne({ _id: bodyPayload._id }, payload)
     res.status(200).json({msg:'updated'})
