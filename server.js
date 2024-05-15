@@ -21,7 +21,7 @@ app.use(express.json())
 
 app.use(`/api`, require("./routes/dashboard"))
 app.all('*', (req, res, next) => {
-    next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+   res.status(400).json({msg:'invalid route'})
 })
 
 module.exports = app;
