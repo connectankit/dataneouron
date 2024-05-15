@@ -6,7 +6,7 @@ const router = express.Router()
 router.get('/dashboard',getAllDashboardData)
 router.post('/dashboard',create_component)
 router.put('/dashboard',update_component)
-router.put('/dashboard/:id',delete_component)
+router.delete('/dashboard/:id',delete_component)
 
 
 module.exports = router
